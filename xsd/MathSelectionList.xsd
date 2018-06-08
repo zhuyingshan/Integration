@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://jw.nju.edu.cn/schema"
+        xmlns:tns="http://jw.nju.edu.cn/schema" xmlns:person="http://www.nju.edu.cn/schema"
+        elementFormDefault="qualified">
+    <import namespace="http://www.nju.edu.cn/schema"
+            schemaLocation="PersonInfo.xsd"/>
+
+    <element name="MathSelectionList" type="选课列表类型"/>
+   
+    <complexType name ="选课列表类型">
+    	<sequence minOccurs="0" maxOccurs="unbounded">
+   			<element name="MathSelection" type="ths:选课信息类型"/>
+		</sequence>
+	</complexType>
+
+    <complexType name="选课信息类型"/>
+    	<sequence>
+    		<element name="课程编号" type="tns:课程编号类型"/>
+    		<element name="学号" type="tns:学号类型"/>
+    		<element name="分数" type="xs：double"/>
+    	</sequence>
+    </complexType>
+
+    <simpleType name="课程编号类型">
+        <restriction base="string">
+            <length value="8"/>
+        </restriction>
+    </simpleType>
+
+    <simpleType name="学号类型">
+    	<restriction base="string">
+            <length value="9"/>
+        </restriction>
+    </simpleType>
+
+</schema>
