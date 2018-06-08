@@ -8,14 +8,14 @@
 				<xs:element name="MathCourse">
 					<xs:complexType>
 						<xs:sequence>
-							<xs:element name="cno">
+							<xs:element name="编号">
 								<xs:simpleType>
 									<xs:restriction base="xs:string">
 										<xs:length value="8"/>
 									</xs:restriction>
 								</xs:simpleType>
 							</xs:element>
-							<xs:element name="cnm">
+							<xs:element name="名称">
 								<xs:simpleType>
 									<xs:restriction base="xs:string">
 										<xs:minLength value="2"/>
@@ -23,7 +23,7 @@
 									</xs:restriction>
 								</xs:simpleType>
 							</xs:element>
-							<xs:element name="tec">
+							<xs:element name="老师">
 								<xs:simpleType>
 									<xs:restriction base="xs:string">
 										<xs:minLength value="2"/>
@@ -31,7 +31,7 @@
 									</xs:restriction>
 								</xs:simpleType>
 							</xs:element>
-							<xs:element name="share">
+							<xs:element name="共享">
 								<xs:restriction base="xs:string">
 									<length value="1"/>
 								</xs:restriction>
