@@ -2,10 +2,10 @@
 <!-- created with XMLSpear -->
 <xs:schema elementFormDefault="qualified"
     targetNamespace="http://yourNamespace" xmlns="http://yourNamespace" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-    <xs:element name="commerceCourses">
+    <xs:element name="CommerceCourses">
         <xs:complesType>
             <xs:sequence minOccurs="0" maxOccurs="unbounded">
-                <xs:element name="commerceCourse">
+                <xs:element name="CommerceCourse">
                     <xs:complexType>
                         <xs:sequence>
                             <xs:element name="课程编号">
