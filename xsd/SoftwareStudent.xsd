@@ -5,7 +5,7 @@
 	<import namespace="http://www.nju.edu.cn/schema"
             schemaLocation="PersonInfo.xsd"/>
 
-	<element name="student" type="tns:studentinfo"/>
+	<element name="softwarestudent" type="tns:studentinfo"/>
 	
 	<complexType name="studentinfo">
         <sequence>

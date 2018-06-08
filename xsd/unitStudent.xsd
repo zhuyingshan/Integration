@@ -5,9 +5,9 @@
 	<import namespace="http://www.nju.edu.cn/schema"
             schemaLocation="PersonInfo.xsd"/>
 
-	<element name="unitstudent" type="tns:unitinfo"/>
+	<element name="unitedstudent" type="tns:unitedinfo"/>
 	
-	<complexType name="unitinfo">
+	<complexType name="unitedinfo">
         <sequence>
             <element name="学号" type="tns:学号类型"/>
             <element name="姓名" type="tns:姓名类型"/>
