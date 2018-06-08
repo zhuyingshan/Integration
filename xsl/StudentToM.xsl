@@ -9,13 +9,13 @@
 				    <xsl:choose>
 					    <xsl:when test="major='math'">
 						     <学生编号>
-							     <xsl:value-of select="id"/>
+							     <xsl:value-of select="学号"/>
 							 </学生编号>
 							 <姓名>
-							     <xsl:value-of select="name"/>
+							     <xsl:value-of select="姓名"/>
 							 </姓名> 
 							 <专业>
-					             <xsl:value-of select="major"/>
+					             <xsl:value-of select="院系"/>
 							 </专业>
 					    </xsl:when>
 					</xsl:choose>

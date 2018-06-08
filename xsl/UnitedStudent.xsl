@@ -8,37 +8,37 @@
 			    <student>
 				    <xsl:choose>
 					    <xsl:when test="name='softwarestudent'">
-						     <major>
-							     <xsl:value-of select="院系"/>
-							 </major>
-							 <name>
-							     <xsl:value-of select="姓名"/>
-							 </name> 
-							 <id>
+							 <学号>
 					             <xsl:value-of select="学号"/>
-							 </id>
+							 </学号>
+							 <姓名>
+							     <xsl:value-of select="姓名"/>
+							 </姓名> 
+							 <院系>
+							     <xsl:value-of select="院系"/>
+							 </院系>
 					    </xsl:when>
 						<xsl:when test="name='commercestudent'">
-						     <major>
-							     <xsl:value-of select="sde"/>
-							 </major>
-							 <name>
+						     <学号>
+					             <xsl:value-of select="sno"/>
+							 </学号>
+							 <姓名>
 							     <xsl:value-of select="snm"/>
-							 </name> 
-							 <id>
-					             <xsl:value-of select="Sno"/>
-							 </id>
+							 </姓名> 
+							 <院系>
+							     <xsl:value-of select="sde"/>
+							 </院系>
 					    </xsl:when>
 					    <xsl:when test="name='mathstudent'">
-						     <major>
-							     <xsl:value-of select="专业"/>
-							 </major>
-							 <name>
-							     <xsl:value-of select="姓名"/>
-							 </name> 
-							 <id>
+						     <学号>
 					             <xsl:value-of select="学生编号"/>
-							 </id>
+							 </学号>
+							 <姓名>
+							     <xsl:value-of select="姓名"/>
+							 </姓名> 
+							 <院系>
+							     <xsl:value-of select="专业"/>
+							 </院系>
 					    </xsl:when>
 					</xsl:choose>
 					
