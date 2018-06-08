@@ -5,16 +5,16 @@
 	<import namespace="http://www.nju.edu.cn/schema"
             schemaLocation="PersonInfo.xsd"/>
 
-	<element name="unitstudent" type="tns:unitinfo"/>
+	<element name="softwarestudent" type="tns:studentinfo"/>
 	
-	<complexType name="unitinfo">
+	<complexType name="studentinfo">
         <sequence>
             <element name="学号" type="tns:学号类型"/>
             <element name="姓名" type="tns:姓名类型"/>
             <element name="院系" type="tns:院系类型"/>
+            <element name="性别" type="tns:性别类型"/>
         </sequence>
     </complexType>
-	
 	
 	<simpleType name="学号类型">
         <restriction base="string">
@@ -35,6 +35,11 @@
             <maxlength value="10"/>
         </restriction>
     </simpleType>
-
-
-</schema>	
+	
+	<simpleType name="性别类型">
+        <restriction base="string">
+            <length value="1"/>
+        </restriction>
+    </simpleType>
+	
+</schema>
