@@ -5,31 +5,31 @@
     <import namespace="http://www.nju.edu.cn/schema"
             schemaLocation="PersonInfo.xsd"/>
 
-    <element name="SoftwareSelection" type="ths:选课信息类型"/>
+    <element name="CommerceSelectionList" type="选课列表类型"/>
+   
+    <complexType name ="选课列表类型">
+    	<sequence minOccurs="0" maxOccurs="unbounded">
+   			<element name="CommerceSelection" type="ths:选课信息类型"/>
+		</sequence>
+	</complexType>
 
     <complexType name="选课信息类型"/>
     	<sequence>
-    		<element name="课程编号" type="tns:课程编号类型"/>
-    		<element name="学生编号" type="tns:学生编号类型"/>
-    		<element name="成绩" type="tns：成绩类型"/>
+    		<element name="cns" type="tns:课程编号类型"/>
+    		<element name="sno" type="tns:学号类型"/>
+    		<element name="grd" type="xs：double"/>
     	</sequence>
     </complexType>
 
     <simpleType name="课程编号类型">
-    	<restriction base="string">
+        <restriction base="string">
             <length value="8"/>
         </restriction>
     </simpleType>
 
-    <simpleType name="学生编号类型">
+    <simpleType name="学号类型">
     	<restriction base="string">
             <length value="9"/>
-        </restriction>
-    </simpleType>
-
-    <simpleType name="成绩类型">
-        <restriction base="string">
-            <length value="4"/>
         </restriction>
     </simpleType>
 

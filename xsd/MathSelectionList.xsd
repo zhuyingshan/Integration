@@ -5,7 +5,13 @@
     <import namespace="http://www.nju.edu.cn/schema"
             schemaLocation="PersonInfo.xsd"/>
 
-    <element name="MathSelection" type="ths:选课信息类型"/>
+    <element name="MathSelectionList" type="选课列表类型"/>
+   
+    <complexType name ="选课列表类型">
+    	<sequence minOccurs="0" maxOccurs="unbounded">
+   			<element name="MathSelection" type="ths:选课信息类型"/>
+		</sequence>
+	</complexType>
 
     <complexType name="选课信息类型"/>
     	<sequence>
@@ -16,7 +22,7 @@
     </complexType>
 
     <simpleType name="课程编号类型">
-    	<restriction base="string">
+        <restriction base="string">
             <length value="8"/>
         </restriction>
     </simpleType>
