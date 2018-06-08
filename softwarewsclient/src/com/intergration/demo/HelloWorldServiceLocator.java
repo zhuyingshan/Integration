@@ -22,7 +22,7 @@ public class HelloWorldServiceLocator extends org.apache.axis.client.Service imp
     }
 
     // Use to get a proxy class for HelloWorld
-    private java.lang.String HelloWorld_address = "http://localhost:8080//services/example/HelloWorld";
+    private java.lang.String HelloWorld_address = "http://localhost:8080//services/software/HelloWorld";
 
     public java.lang.String getHelloWorldAddress() {
         return HelloWorld_address;
