@@ -34,7 +34,7 @@
 							<xs:element name="共享">
 								<xs:simpleType>
 									<xs:restriction base="xs:string">
-										<length value="1"/>
+										<xs:length value="1"/>
 									</xs:restriction>
 								</xs:simpleType>
 							</xs:element>
