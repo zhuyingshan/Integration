@@ -74,10 +74,12 @@ public class XsltHandler {
         }
     }
     public static void main(String[] args) {
-        String srcXml = "source/xml/UniteCourses.xml";
-        String dstXml = "source/targetxml/SoftwareCourses.xml";
-        String xslt = "source/xsl/CourseToS.xsl";
-
+        /*String srcXml = "source/xml/UniteCourses.xml";
+        String dstXml = "source/targetxml/MathCourses.xml";
+        String xslt = "source/xsl/CourseToM.xsl";*/
+        String srcXml = "source/xml/MathSelectionExam.xml";
+        String dstXml = "source/targetxml/UniteSelection3.xml";
+        String xslt = "source/xsl/UniteSelectionList.xsl";
         transformXmlByXslt(srcXml, dstXml, xslt);
     }
 }

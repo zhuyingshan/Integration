@@ -4,13 +4,14 @@ import po.Course;
 import po.LoginResult;
 import po.Selection;
 
+import java.sql.ResultSet;
 import java.util.ArrayList;
 
 /**
  * Created by 朱应山 on 2018/6/9.
  */
-public class CommerceServiceImp implements CommerceService
-{
+public class CommerceServiceImp implements CommerceService {
+    JDBCHelper jdbcHelper=new JDBCHelper();
     /**
      * 简单的登录，验证结果
      *
@@ -20,7 +21,24 @@ public class CommerceServiceImp implements CommerceService
      */
     @Override
     public LoginResult login(String studentID, String studentName) {
-        return null;
+        try {
+            String queryString="select snm from student where sno =\""+studentID +"\";";
+            System.out.println(queryString);
+            jdbcHelper.run(queryString);
+            ResultSet set=jdbcHelper.pst.executeQuery();
+            while(set.next()){
+                String p=set.getString(1);
+                if (p.equals(studentName)) {
+                    return LoginResult.SUCCESS;
+                }else{
+                    return LoginResult.ERROR;
+                }
+            }
+            return LoginResult.NOTEXIST;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return  null;
     }
 
     /**
