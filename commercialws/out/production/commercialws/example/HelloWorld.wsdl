@@ -7,13 +7,13 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
    <element name="studentid" type="xsd:string"/>
    <element name="courseid" type="xsd:string"/>
    <element name="chooseCourseReturn" type="xsd:string"/>
-   <element name="empty" type="xsd:string"/>
-   <element name="findMyCourseReturn" type="xsd:string"/>
-   <element name="empty1" type="xsd:string"/>
+   <element name="nothing" type="xsd:string"/>
    <element name="findAllCourseReturn" type="xsd:string"/>
    <element name="studentid1" type="xsd:string"/>
    <element name="name" type="xsd:string"/>
    <element name="loginReturn" type="xsd:string"/>
+   <element name="empty" type="xsd:string"/>
+   <element name="findMyCourseReturn" type="xsd:string"/>
    <element name="from" type="xsd:string"/>
    <element name="sayHelloWorldFromReturn" type="xsd:string"/>
   </schema>
@@ -41,7 +41,7 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
    <wsdl:message name="findAllCourseRequest">
 
-      <wsdl:part element="impl:empty1" name="empty"/>
+      <wsdl:part element="impl:nothing" name="nothing"/>
 
    </wsdl:message>
 
@@ -51,17 +51,17 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
    </wsdl:message>
 
-   <wsdl:message name="findMyCourseRequest">
-
-      <wsdl:part element="impl:empty" name="empty"/>
-
-   </wsdl:message>
-
    <wsdl:message name="loginRequest">
 
       <wsdl:part element="impl:studentid1" name="studentid"/>
 
       <wsdl:part element="impl:name" name="name"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="findMyCourseRequest">
+
+      <wsdl:part element="impl:empty" name="empty"/>
 
    </wsdl:message>
 
@@ -93,15 +93,7 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
       </wsdl:operation>
 
-      <wsdl:operation name="findMyCourse" parameterOrder="empty">
-
-         <wsdl:input message="impl:findMyCourseRequest" name="findMyCourseRequest"/>
-
-         <wsdl:output message="impl:findMyCourseResponse" name="findMyCourseResponse"/>
-
-      </wsdl:operation>
-
-      <wsdl:operation name="findAllCourse" parameterOrder="empty">
+      <wsdl:operation name="findAllCourse" parameterOrder="nothing">
 
          <wsdl:input message="impl:findAllCourseRequest" name="findAllCourseRequest"/>
 
@@ -114,6 +106,14 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
          <wsdl:input message="impl:loginRequest" name="loginRequest"/>
 
          <wsdl:output message="impl:loginResponse" name="loginResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="findMyCourse" parameterOrder="empty">
+
+         <wsdl:input message="impl:findMyCourseRequest" name="findMyCourseRequest"/>
+
+         <wsdl:output message="impl:findMyCourseResponse" name="findMyCourseResponse"/>
 
       </wsdl:operation>
 
@@ -142,24 +142,6 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
          </wsdl:input>
 
          <wsdl:output name="chooseCourseResponse">
-
-            <wsdlsoap:body use="literal"/>
-
-         </wsdl:output>
-
-      </wsdl:operation>
-
-      <wsdl:operation name="findMyCourse">
-
-         <wsdlsoap:operation soapAction=""/>
-
-         <wsdl:input name="findMyCourseRequest">
-
-            <wsdlsoap:body use="literal"/>
-
-         </wsdl:input>
-
-         <wsdl:output name="findMyCourseResponse">
 
             <wsdlsoap:body use="literal"/>
 
@@ -196,6 +178,24 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
          </wsdl:input>
 
          <wsdl:output name="loginResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="findMyCourse">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="findMyCourseRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="findMyCourseResponse">
 
             <wsdlsoap:body use="literal"/>
 
