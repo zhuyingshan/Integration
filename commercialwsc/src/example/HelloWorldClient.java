@@ -12,12 +12,15 @@ public class HelloWorldClient {
       //((HelloWorldSoapBindingStub)service).setUsername("user3");
       //((HelloWorldSoapBindingStub)service).setPassword("pass3");
       // invoke business method
-      String res = service.sayHelloWorldFrom("Commercial!");
+      String res = service.sayHelloWorldFrom("Tom!");
       System.out.println(res);
+
+      System.out.println(service.findAllCourse("44"));
+      System.out.println(service.findMyCourse("99"));
     } catch (javax.xml.rpc.ServiceException ex) {
       ex.printStackTrace();
     } catch (java.rmi.RemoteException ex) {
       ex.printStackTrace();
-    }
+    }  
   }
 }

@@ -21,7 +21,95 @@ public class HelloWorldServiceTestCase extends junit.framework.TestCase {
         assertTrue(service != null);
     }
 
-    public void test1HelloWorldSayHelloWorldFrom() throws Exception {
+    public void test1HelloWorldLogin() throws Exception {
+        com.intergration.demo.HelloWorldSoapBindingStub binding;
+        try {
+            binding = (com.intergration.demo.HelloWorldSoapBindingStub)
+                          new com.intergration.demo.HelloWorldServiceLocator().getHelloWorld();
+        }
+        catch (javax.xml.rpc.ServiceException jre) {
+            if(jre.getLinkedCause()!=null)
+                jre.getLinkedCause().printStackTrace();
+            throw new junit.framework.AssertionFailedError("JAX-RPC ServiceException caught: " + jre);
+        }
+        assertNotNull("binding is null", binding);
+
+        // Time out after a minute
+        binding.setTimeout(60000);
+
+        // Test operation
+        java.lang.String value = null;
+        value = binding.login(new java.lang.String(), new java.lang.String());
+        // TBD - validate results
+    }
+
+    public void test2HelloWorldFindAllCourse() throws Exception {
+        com.intergration.demo.HelloWorldSoapBindingStub binding;
+        try {
+            binding = (com.intergration.demo.HelloWorldSoapBindingStub)
+                          new com.intergration.demo.HelloWorldServiceLocator().getHelloWorld();
+        }
+        catch (javax.xml.rpc.ServiceException jre) {
+            if(jre.getLinkedCause()!=null)
+                jre.getLinkedCause().printStackTrace();
+            throw new junit.framework.AssertionFailedError("JAX-RPC ServiceException caught: " + jre);
+        }
+        assertNotNull("binding is null", binding);
+
+        // Time out after a minute
+        binding.setTimeout(60000);
+
+        // Test operation
+        java.lang.String value = null;
+        value = binding.findAllCourse(new java.lang.String());
+        // TBD - validate results
+    }
+
+    public void test3HelloWorldFindMyCourse() throws Exception {
+        com.intergration.demo.HelloWorldSoapBindingStub binding;
+        try {
+            binding = (com.intergration.demo.HelloWorldSoapBindingStub)
+                          new com.intergration.demo.HelloWorldServiceLocator().getHelloWorld();
+        }
+        catch (javax.xml.rpc.ServiceException jre) {
+            if(jre.getLinkedCause()!=null)
+                jre.getLinkedCause().printStackTrace();
+            throw new junit.framework.AssertionFailedError("JAX-RPC ServiceException caught: " + jre);
+        }
+        assertNotNull("binding is null", binding);
+
+        // Time out after a minute
+        binding.setTimeout(60000);
+
+        // Test operation
+        java.lang.String value = null;
+        value = binding.findMyCourse(new java.lang.String());
+        // TBD - validate results
+    }
+
+    public void test4HelloWorldChooseCourse() throws Exception {
+        com.intergration.demo.HelloWorldSoapBindingStub binding;
+        try {
+            binding = (com.intergration.demo.HelloWorldSoapBindingStub)
+                          new com.intergration.demo.HelloWorldServiceLocator().getHelloWorld();
+        }
+        catch (javax.xml.rpc.ServiceException jre) {
+            if(jre.getLinkedCause()!=null)
+                jre.getLinkedCause().printStackTrace();
+            throw new junit.framework.AssertionFailedError("JAX-RPC ServiceException caught: " + jre);
+        }
+        assertNotNull("binding is null", binding);
+
+        // Time out after a minute
+        binding.setTimeout(60000);
+
+        // Test operation
+        java.lang.String value = null;
+        value = binding.chooseCourse(new java.lang.String(), new java.lang.String());
+        // TBD - validate results
+    }
+
+    public void test5HelloWorldSayHelloWorldFrom() throws Exception {
         com.intergration.demo.HelloWorldSoapBindingStub binding;
         try {
             binding = (com.intergration.demo.HelloWorldSoapBindingStub)
