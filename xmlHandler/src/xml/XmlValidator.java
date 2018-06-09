@@ -13,8 +13,8 @@ import org.dom4j.io.XMLWriter;
 import org.dom4j.util.XMLErrorHandler;
 import org.junit.*;
 public class XmlValidator {
-	String XMLPath = "G:/xml/UniteCourses.xml";
-	String XSDPath = "G:/xsd/UniteCourses.xsd";
+	String XMLPath = "source/xml/UniteCourses.xml";
+	String XSDPath = "source/xsd/UnitCourses.xsd";
 	public void parser() throws Exception {  
         validateXMLByXSD(XMLPath,XSDPath);  
     }  
