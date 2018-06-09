@@ -74,9 +74,9 @@ public class XsltHandler {
         }
     }
     public static void main(String[] args) {
-        String srcXml = "source/xml/SoftwareCourses.xml";
-        String dstXml = "source/targetxml/UniteCourses.xml";
-        String xslt = "source/xsl/UniteCourses.xsl";
+        String srcXml = "source/xml/UniteCourses.xml";
+        String dstXml = "source/targetxml/SoftwareCourses.xml";
+        String xslt = "source/xsl/CourseToS.xsl";
 
         transformXmlByXslt(srcXml, dstXml, xslt);
     }

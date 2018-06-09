@@ -3,11 +3,11 @@
     <xsl:output encoding="UTF-8" indent="yes" method="xml"/>
     <xsl:template match="/">
        <SoftwareCourses>
-          <xsl:for-each select ="name='SoftwareCourse'">
-             <编号><xsl:value-of select ="课程编号"></xsl:value-of></编号>
-             <名称><xsl:value-of select ="课程名称"></xsl:value-of></名称>
-             <老师><xsl:value-of select ="授课老师"></xsl:value-of></老师>
-             <共享><xsl:value-of select ="共享"></共享>
+          <xsl:for-each select ="UniteCourses/UniteCourse">
+              <课程编号><xsl:value-of select ="课程编号"></xsl:value-of></课程编号>
+              <课程名称><xsl:value-of select ="课程名称"></xsl:value-of></课程名称>
+              <授课老师><xsl:value-of select ="授课老师"/></授课老师>
+              <共享><xsl:value-of select ="共享"/></共享>
              </xsl:for-each>
           </SoftwareCourses>
        

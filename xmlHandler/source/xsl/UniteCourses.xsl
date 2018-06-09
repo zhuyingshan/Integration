@@ -3,18 +3,18 @@
     <xsl:output encoding="UTF-8" indent="yes" method="xml"/>
     <xsl:template match="/">
         <xsl:choose>
-            <xsl:when test="name='SoftwareCourses'">
+            <xsl:when test="SoftwareCourses">
                 <UniteCourses>
-                    <xsl:for-each select="SoftwareCourse">
+                    <xsl:for-each select="SoftwareCourses/SoftwareCourse">
                         <UniteCourse>
                             <课程编号>
-                                <xsl:value-of select="编号"></xsl:value-of>
+                                <xsl:value-of select="课程编号"></xsl:value-of>
                             </课程编号>
                             <课程名称>
-                                <xsl:value-of select="名称"></xsl:value-of>
+                                <xsl:value-of select="课程名称"></xsl:value-of>
                             </课程名称>
                             <授课老师>
-                                <xsl:value-of select="老师"></xsl:value-of>
+                                <xsl:value-of select="授课老师"></xsl:value-of>
                             </授课老师>
                             <共享>
                                 <xsl:value-of select="共享"></xsl:value-of>
@@ -29,6 +29,28 @@
                     <xsl:for-each select="MathCourse">
                         <UniteCourse>
                             <课程编号>
+                                <xsl:value-of select="编号"></xsl:value-of>
+                            </课程编号>
+                            <课程名称>
+                                <xsl:value-of select="名称"></xsl:value-of>
+                            </课程名称>
+                            <授课老师>
+                                <xsl:value-of select="老师"></xsl:value-of>
+                            </授课老师>
+                            <共享>
+                                <xsl:value-of select="共享"></xsl:value-of>
+                            </共享>
+
+                        </UniteCourse>
+                    </xsl:for-each>
+                </UniteCourses>
+            </xsl:when>
+
+            <xsl:when test="CommerceCourses">
+                <UniteCourses>
+                    <xsl:for-each select="CommerceCourse">
+                        <UniteCourse>
+                            <课程编号>
                                 <xsl:value-of select="cno"></xsl:value-of>
                             </课程编号>
                             <课程名称>
@@ -40,28 +62,7 @@
                             <共享>
                                 <xsl:value-of select="share"></xsl:value-of>
                             </共享>
-                        </UniteCourse>
 
-                    </xsl:for-each>
-                </UniteCourses>
-            </xsl:when>
-
-            <xsl:when test="CommerceCourses">
-                <UniteCourses>
-                    <xsl:for-each select="CommerceCourse">
-                        <UniteCourse>
-                            <课程编号>
-                                <xsl:value-of select="课程编号"></xsl:value-of>
-                            </课程编号>
-                            <课程名称>
-                                <xsl:value-of select="课程名称"></xsl:value-of>
-                            </课程名称>
-                            <授课老师>
-                                <xsl:value-of select="授课老师"></xsl:value-of>
-                            </授课老师>
-                            <共享>
-                                <xsl:value-of select="共享"></xsl:value-of>
-                            </共享>
                         </UniteCourse>
                     </xsl:for-each>
                 </UniteCourses>
