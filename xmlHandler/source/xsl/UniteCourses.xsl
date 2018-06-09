@@ -26,7 +26,7 @@
 
             <xsl:when test="MathCourses">
                 <UniteCourses>
-                    <xsl:for-each select="MathCourse">
+                    <xsl:for-each select="MathCourses/MathCourse">
                         <UniteCourse>
                             <课程编号>
                                 <xsl:value-of select="编号"></xsl:value-of>
@@ -48,7 +48,7 @@
 
             <xsl:when test="CommerceCourses">
                 <UniteCourses>
-                    <xsl:for-each select="CommerceCourse">
+                    <xsl:for-each select="CommerceCourses/CommerceCourse">
                         <UniteCourse>
                             <课程编号>
                                 <xsl:value-of select="cno"></xsl:value-of>

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-	<xsl:output method="xml" ident="yes" encoding="UTF-8"/>
+	<xsl:output method="xml" indent="yes" encoding="UTF-8"/>
 
 	<xsl:template match="/">
 		<xsl:choose>
-			<xsl:when test="name = 'SoftwareSelectionList'">
+			<xsl:when test="SoftwareSelectionList">
 				<UniteSelectionList>
-					<xsl:for-each select="SoftwareSelection">
+					<xsl:for-each select="SoftwareSelectionList/SoftwareSelection">
 						<UniteSelection>
 							<xsl:attribute name="课程编号">
 								<xsl:value-of select="课程编号"/>
@@ -21,9 +21,9 @@
 					</xsl:for-each>
 				</UniteSelectionList>
 			</xsl:when>
-			<xsl:when test="name = 'MathSelectionList'">
+			<xsl:when test="MathSelectionList">
 				<UniteSelectionList>
-					<xsl:for-each select="MathSelection">
+					<xsl:for-each select="MathSelectionList/MathSelection">
 						<UniteSelection>
 							<xsl:attribute name="课程编号">
 								<xsl:value-of select="课程编号"/>
@@ -38,9 +38,9 @@
 					</xsl:for-each>
 				</UniteSelectionList>
 			</xsl:when>
-			<xsl:when test="name = 'CommerceSelectionList'">
+			<xsl:when test="CommerceSelectionList">
 				<UniteSelectionList>
-					<xsl:for-each select="CommerceSelection">
+					<xsl:for-each select="CommerceSelectionList/CommerceSelection">
 						<UniteSelection>
 							<xsl:attribute name="课程编号">
 								<xsl:value-of select="cns"/>

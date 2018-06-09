@@ -5,38 +5,8 @@
 	<xsl:template match="/">
 		<CommerceSelectionList>
 			<xsl:choose>
-				<xsl:when test="name = 'SoftwareSelectionList">
-					<xsl:for-each select="SoftwareSelection">
-						<CommerceSelection>
-							<xsl:attribute name="cns">
-								<xsl:value-of select="课程编号"/>
-							</xsl:attribute>
-							<xsl:attribute name="sno">
-								<xsl:value-of select="学生编号"/>
-							</xsl:attribute>
-							<xsl:attribute name="grd">
-								<xsl:value-of select="成绩"/>
-							</xsl:attribute>
-						</CommerceSelection>
-					</xsl:for-each>
-				</xsl:when>
-				<xsl:when test="name = 'MathSelectionList">
-					<xsl:for-each select="MathSelection">
-						<CommerceSelection>
-							<xsl:attribute name="cns">
-								<xsl:value-of select="课程编号"/>
-							</xsl:attribute>
-							<xsl:attribute name="sno">
-								<xsl:value-of select="学号"/>
-							</xsl:attribute>
-							<xsl:attribute name="grd">
-								<xsl:value-of select="分数"/>
-							</xsl:attribute>
-						</CommerceSelection>
-					</xsl:for-each>
-				</xsl:when>
-				<xsl:when test="name = 'UniteSelectionList">
-					<xsl:for-each select="UniteSelection">
+				<xsl:when test="UniteSelectionList">
+					<xsl:for-each select="UniteSelectionList/UniteSelection">
 						<CommerceSelection>
 							<xsl:attribute name="cns">
 								<xsl:value-of select="课程编号"/>
