@@ -2,20 +2,20 @@
 <!-- created with XMLSpear -->
 <xs:schema elementFormDefault="qualified" targetNamespace="http://yourNamespace"
 	xmlns="http://yourNamespace" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-	<xs:element name="SoftwareCourses">
-		<xs:complexType>
+	<xs:element name="CommerceCourses">
+		<xs:complesType>
 			<xs:sequence minOccurs="0" maxOccurs="unbounded">
-				<xs:element name="SoftwareCourse">
+				<xs:element name="CommerceCourse">
 					<xs:complexType>
 						<xs:sequence>
-							<xs:element name="编号">
+							<xs:element name="cno">
 								<xs:simpleType>
 									<xs:restriction base="xs:string">
 										<xs:length value="8"/>
 									</xs:restriction>
 								</xs:simpleType>
 							</xs:element>
-							<xs:element name="名称">
+							<xs:element name="cnm">
 								<xs:simpleType>
 									<xs:restriction base="xs:string">
 										<xs:minLength value="2"/>
@@ -23,7 +23,7 @@
 									</xs:restriction>
 								</xs:simpleType>
 							</xs:element>
-							<xs:element name="老师">
+							<xs:element name="tec">
 								<xs:simpleType>
 									<xs:restriction base="xs:string">
 										<xs:minLength value="2"/>
@@ -31,7 +31,7 @@
 									</xs:restriction>
 								</xs:simpleType>
 							</xs:element>
-							<xs:element name="共享">
+							<xs:element name="share">
 								<xs:restriction base="xs:string">
 									<length value="1"/>
 								</xs:restriction>
@@ -40,6 +40,6 @@
 					</xs:complexType>
 				</xs:element>
 			</xs:sequence>
-		</xs:complexType>
+		</xs:complesType>
 	</xs:element>
 </xs:schema>

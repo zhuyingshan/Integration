@@ -5,7 +5,7 @@
 	<xs:element name="UniteCourses">
 		<xs:complexType>
 			<xs:sequence minOccurs="0" maxOccurs="unbounded">
-				<xs:element name="Unitecourse">
+				<xs:element name="UniteCourse">
 					<xs:complexType>
 						<xs:sequence>
 							<xs:element name="课程编号">
@@ -32,9 +32,11 @@
 								</xs:simpleType>
 							</xs:element>
 							<xs:element name="共享">
-								<xs:restriction base="xs:string">
-									<length value="1"/>
-								</xs:restriction>
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<length value="1"/>
+									</xs:restriction>
+								</xs:simpleType>
 							</xs:element>
 						</xs:sequence>
 					</xs:complexType>
