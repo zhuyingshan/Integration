@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<Students>
+<MathStudents>
     <mathstudent>
 	   <学生编号>151450001</学生编号>
 	   <姓名>王五</姓名>
@@ -10,4 +9,4 @@
 	   <姓名>陈九</姓名>
 	   <专业>math</专业>
 	</mathstudent>
-</Students>
+</MathStudents>

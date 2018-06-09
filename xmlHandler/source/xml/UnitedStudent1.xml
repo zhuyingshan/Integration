@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<Students>
+<UnitedStudents>
     <student>
 	   <学号>151250001</学号>
 	   <姓名>张三</姓名>
@@ -35,4 +34,4 @@
 	   <姓名>陈九</姓名>
 	   <院系>math</院系>
 	</student>
-</Students>
+</UnitedStudents>
