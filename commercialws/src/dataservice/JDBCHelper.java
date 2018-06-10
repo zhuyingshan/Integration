@@ -4,11 +4,6 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-/**
- * @author 朱应山
- * jdbc的类，先建立dbhelper
- * resultset
- */
 public class JDBCHelper {
     private static final String url = "jdbc:mysql://localhost/commerce?user=root&password=123456&characterEncoding=utf8&useSSL=true&serverTimezone=UTC";
     private static final String driver = "com.mysql.jdbc.Driver";
@@ -42,6 +37,9 @@ public class JDBCHelper {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+    protected void finalize() {
+        this.close();
     }
 }
 
