@@ -43,7 +43,7 @@ public class Dom4jDemo  {
 
 
     }
-    public ArrayList<Course> parserXml(String fileName) {
+    public void parserXml(String fileName) {
         File inputXml = new File(fileName);
         SAXReader saxReader = new SAXReader();
         ArrayList<Course> list= new ArrayList<>();
@@ -64,6 +64,6 @@ public class Dom4jDemo  {
         } catch (DocumentException e) {
             System.out.println(e.getMessage());
         }
-        return list;
+        System.out.println(list.size());
     }
 }
