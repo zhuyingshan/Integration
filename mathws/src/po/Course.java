@@ -10,6 +10,13 @@ public class Course {
     public Course() {
     }
 
+    public Course(String courseID, String courseName, String teacher, char isShare) {
+        this.courseId = courseID;
+        this.courseName = courseName;
+        this.teacher = teacher;
+        this.isShare = isShare;
+    }
+
     public String getCourseId() {
         return courseId;
     }
