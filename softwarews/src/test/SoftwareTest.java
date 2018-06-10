@@ -1,12 +1,12 @@
 package test;
 
-import dataservice.MathService;
-import dataservice.MathServiceImp;
+import dataservice.SoftwareService;
+import dataservice.SoftwareServiceImp;
 
 public class SoftwareTest {
 
-    public static final void main(String[] args){
-        MathService service=new MathServiceImp();
-        System.out.println(service.login("",""));
+    public static void main(String[] args){
+        SoftwareService service=new SoftwareServiceImp();
+        System.out.println(service.login("151250001","戚蓉"));
     }
 }
