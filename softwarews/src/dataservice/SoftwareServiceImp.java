@@ -13,7 +13,7 @@ public class SoftwareServiceImp implements SoftwareService {
     @Override
     public LoginResult login(String studentID, String studentName) {
         try {
-            String queryString="select 姓名 from student where 学生编号 = "+ studentID;
+            String queryString="select 姓名 from student where 学生编号 = "+ studentID + ";";
             System.out.println(queryString);
             softwareJdbcHelper.run(queryString);
             ResultSet set= softwareJdbcHelper.pst.executeQuery();
