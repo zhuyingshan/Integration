@@ -7,25 +7,16 @@ import po.Selection;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
-/**
- * Created by ��Ӧɽ on 2018/6/9.
- */
-public class CommerceServiceImp implements CommerceService {
-    JDBCHelper JDBCHelper =new JDBCHelper();
-    /**
-     * �򵥵ĵ�¼����֤���
-     *
-     * @param studentID   ѧ��ID
-     * @param studentName ѧ������
-     * @return ��¼�������������
-     */
+public class MathServiceImp implements MathService {
+    MathJDBCHelper mathJdbcHelper =new MathJDBCHelper();
+
     @Override
     public LoginResult login(String studentID, String studentName) {
         try {
-            String queryString="select snm from student where sno =\""+studentID +"\";";
+            String queryString="select 姓名 from student where 学生编号 = "+ studentID;
             System.out.println(queryString);
-            JDBCHelper.run(queryString);
-            ResultSet set= JDBCHelper.pst.executeQuery();
+            mathJdbcHelper.run(queryString);
+            ResultSet set= mathJdbcHelper.pst.executeQuery();
             while(set.next()){
                 String p=set.getString(1);
                 if (p.equals(studentName)) {
@@ -41,34 +32,16 @@ public class CommerceServiceImp implements CommerceService {
         return  null;
     }
 
-    /**
-     * ���Ժϵ���пγ�
-     *
-     * @return Ժϵ���еĿγ�
-     */
     @Override
     public ArrayList<Course> getCourseList() {
         return null;
     }
 
-    /**
-     * ���ѧ���ڱ�Ժ������ѡ�μ�¼
-     *
-     * @param studentID
-     * @return
-     */
     @Override
     public ArrayList<Selection> getHistorySel(String studentID) {
         return null;
     }
 
-    /**
-     * ѡ�β�������ѡ���б���������Ŀ��������ʼֵΪ0
-     *
-     * @param studentID
-     * @param coureseID
-     * @return
-     */
     @Override
     public boolean select(String studentID, String coureseID) {
         return false;
