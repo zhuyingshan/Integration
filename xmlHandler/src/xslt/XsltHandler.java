@@ -6,29 +6,14 @@ import javax.xml.transform.*;
 import javax.xml.transform.stream.StreamResult;
 import javax.xml.transform.stream.StreamSource;
 
-/**
- * XML¹¤¾ßÀà
- * @author  zhuyingshan
- * @version 1.0
- * @created 2018/6/19
- */
 public class XsltHandler {
 
-    /**
-     * Ê¹ÓÃXSLT×ª»»XMLÎÄ¼þ
-     * @param srcXml    Ô´XMLÎÄ¼þÂ·¾¶
-     * @param dstXml    Ä¿±êXMLÎÄ¼þÂ·¾¶
-     * @param xslt      XSLTÎÄ¼þÂ·¾¶
-     */
     public static void transformXmlByXslt(String srcXml, String dstXml, String xslt) {
 
-        // »ñÈ¡×ª»»Æ÷¹¤³§
         TransformerFactory tf = TransformerFactory.newInstance();
 
         try {
-            // »ñÈ¡×ª»»Æ÷¶ÔÏóÊµÀý
             Transformer transformer = tf.newTransformer(new StreamSource(xslt));
-            // ½øÐÐ×ª»»
             transformer.transform(new StreamSource(srcXml),
                     new StreamResult(new FileOutputStream(dstXml)));
         } catch (TransformerConfigurationException e) {
@@ -41,7 +26,7 @@ public class XsltHandler {
     }
 
     public  static void transformXml(InputStream srcStream, OutputStream destStream, TramsformType type){
-        //InputSteam in=new ByteArrayInputStream(str.getBytes()); ×Ö·û´®±ä³ÉÊäÈëÁ÷
+        //InputSteam in=new ByteArrayInputStream(str.getBytes()); ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         String xsltFile="";
         switch (type){
             case COURSETOC:xsltFile="";break;
