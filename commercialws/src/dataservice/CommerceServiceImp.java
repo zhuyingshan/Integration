@@ -1,5 +1,6 @@
 package dataservice;
 
+import jdk.nashorn.internal.runtime.ECMAException;
 import po.Course;
 import po.LoginResult;
 import po.Selection;
@@ -8,29 +9,30 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 
 /**
- * Created by ÖìÓ¦É½ on 2018/6/9.
+ * Created by æœ±åº”å±± on 2018/6/9.
  */
 public class CommerceServiceImp implements CommerceService {
-    JDBCHelper jdbcHelper=new JDBCHelper();
+    JDBCHelper jdbcHelper = new JDBCHelper();
+
     /**
-     * ¼òµ¥µÄµÇÂ¼£¬ÑéÖ¤½á¹û
+     * ç®€å•çš„ç™»å½•ï¼ŒéªŒè¯ç»“æœ
      *
-     * @param studentID   Ñ§ÉúID
-     * @param studentName Ñ§ÉúĞÕÃû
-     * @return µÇÂ¼½á¹û£¬°üÀ¨ÈıÖÖ
+     * @param studentID   å­¦ç”ŸID
+     * @param studentName å­¦ç”Ÿå§“å
+     * @return ç™»å½•ç»“æœï¼ŒåŒ…æ‹¬ä¸‰ç§
      */
     @Override
     public LoginResult login(String studentID, String studentName) {
         try {
-            String queryString="select snm from student where sno =\""+studentID +"\";";
+            String queryString = "select snm from student where sno =\"" + studentID + "\";";
             System.out.println(queryString);
             jdbcHelper.run(queryString);
-            ResultSet set=jdbcHelper.pst.executeQuery();
-            while(set.next()){
-                String p=set.getString(1);
+            ResultSet set = jdbcHelper.pst.executeQuery();
+            while (set.next()) {
+                String p = set.getString(1);
                 if (p.equals(studentName)) {
                     return LoginResult.SUCCESS;
-                }else{
+                } else {
                     return LoginResult.ERROR;
                 }
             }
@@ -38,32 +40,65 @@ public class CommerceServiceImp implements CommerceService {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return  null;
+        System.out.println("å‘ç”Ÿé”™è¯¯");
+        return LoginResult.ERROR;
     }
 
     /**
-     * »ñµÃÔºÏµËùÓĞ¿Î³Ì
+     * è·å¾—é™¢ç³»æ‰€æœ‰è¯¾ç¨‹
      *
-     * @return ÔºÏµËùÓĞµÄ¿Î³Ì
+     * @return é™¢ç³»æ‰€æœ‰çš„è¯¾ç¨‹
      */
     @Override
     public ArrayList<Course> getCourseList() {
-        return null;
+        ArrayList<Course> list = new ArrayList<>();
+        try {
+            String queryString = "select * from course;";
+            System.out.println(queryString);
+            jdbcHelper.run(queryString);
+            ResultSet set = jdbcHelper.pst.executeQuery();
+            while (set.next()) {
+                String courseID = set.getString(1);
+                String courseName = set.getString(2);
+                String teacher = set.getString(3);
+                char share = set.getString(4).charAt(0);
+                Course course = new Course(courseID, courseName, teacher, share);
+                list.add(course);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return list;
     }
 
     /**
-     * »ñµÃÑ§ÉúÔÚ±¾ÔºµÄËùÓĞÑ¡¿Î¼ÇÂ¼
+     * è·å¾—å­¦ç”Ÿåœ¨æœ¬é™¢çš„æ‰€æœ‰é€‰è¯¾è®°å½•
      *
      * @param studentID
      * @return
      */
     @Override
     public ArrayList<Selection> getHistorySel(String studentID) {
-        return null;
+        ArrayList<Selection> list = new ArrayList<>();
+        try {
+            String queryString = "select *from selection where sno=\"" + studentID + "\";";
+            jdbcHelper.run(queryString);
+            ResultSet set = jdbcHelper.pst.executeQuery();
+            while (set.next()) {
+                String cno = set.getString(1);
+                String sno = set.getString(2);
+                double grade = set.getDouble(3);
+                Selection selection = new Selection(cno, sno, grade);
+                list.add(selection);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return list;
     }
 
     /**
-     * Ñ¡¿Î²Ù×÷£¬ÔÚÑ¡¿ÎÁĞ±íÖĞĞÂÔöÏîÄ¿£¬·ÖÊı³õÊ¼ÖµÎª0
+     * é€‰è¯¾æ“ä½œï¼Œåœ¨é€‰è¯¾åˆ—è¡¨ä¸­æ–°å¢é¡¹ç›®ï¼Œåˆ†æ•°åˆå§‹å€¼ä¸º0
      *
      * @param studentID
      * @param coureseID
@@ -71,6 +106,20 @@ public class CommerceServiceImp implements CommerceService {
      */
     @Override
     public boolean select(String studentID, String coureseID) {
+        try {
+            Selection selection = new Selection(studentID, coureseID);
+            String addString = " insert into selection values(\"" + selection.courseId
+                    + "\",\"" + selection.studentId + "\",\"" + selection.grade + "\");";
+            jdbcHelper.run(addString);
+            int result=jdbcHelper.pst.executeUpdate();
+            if(result!=0){
+                return  true;
+            }else{
+                return  false;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         return false;
     }
 }
