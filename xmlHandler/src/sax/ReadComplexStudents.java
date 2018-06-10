@@ -1,6 +1,13 @@
 package sax;
 
-public class ReadUnitedStudents {
+import org.dom4j.*;
+import org.w3c.dom.NodeList;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import java.io.File;
+
+public class ReadComplexStudents {
     public static void main(String args[]) {
         readXmlFile("source/xml/UnitedStudent1.xml");
     }
@@ -14,8 +21,6 @@ public class ReadUnitedStudents {
             db = dbf.newDocumentBuilder();// 返回db对象用documentBuilderFatory对象获得返回documentBuildr对象
             Document dt = db.parse(f); // 得到一个DOM并返回给document对象
             element = dt.getDocumentElement();// 得到一个elment根元素
-
-            System.out.print(element.);
             System.out.println("根元素：" + element.getNodeName()); // 获得根节点
             NodeList childNodes = element.getChildNodes(); // 获得根元素下的子节点
             for (int i = 0; i < childNodes.getLength(); i++) // 遍历这些子节点
@@ -33,7 +38,7 @@ public class ReadUnitedStudents {
                         else if ("姓名".equals(detail.getNodeName())) // 输出
                             System.out.println("姓名: " + detail.getTextContent());
                         else if ("院系".equals(detail.getNodeName())) // 输出
-                            System.out.println("姓名: " + detail.getTextContent());
+                            System.out.println("院系: " + detail.getTextContent());
 
                     }
                 }
@@ -42,6 +47,7 @@ public class ReadUnitedStudents {
             System.out.println(e);
         }
     }
+
 
 
 
