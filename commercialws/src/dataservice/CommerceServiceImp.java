@@ -1,6 +1,6 @@
 package dataservice;
 
-import jdk.nashorn.internal.runtime.ECMAException;
+import datautils.JDBCHelper;
 import po.Course;
 import po.LoginResult;
 import po.Selection;
@@ -9,18 +9,6 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 
 /**
-<<<<<<< HEAD
- * Created by ��Ӧɽ on 2018/6/9.
- */
-public class CommerceServiceImp implements CommerceService {
-    JDBCHelper JDBCHelper =new JDBCHelper();
-    /**
-     * �򵥵ĵ�¼����֤���
-     *
-     * @param studentID   ѧ��ID
-     * @param studentName ѧ������
-     * @return ��¼�������������
-=======
  * Created by 朱应山 on 2018/6/9.
  */
 public class CommerceServiceImp implements CommerceService {
@@ -32,24 +20,16 @@ public class CommerceServiceImp implements CommerceService {
      * @param studentID   学生ID
      * @param studentName 学生姓名
      * @return 登录结果，包括三种
->>>>>>> d3f931dad5a8d8677a79de83715ac4e1d5f4e911
      */
     @Override
     public LoginResult login(String studentID, String studentName) {
         try {
             String queryString = "select snm from student where sno =\"" + studentID + "\";";
             System.out.println(queryString);
-<<<<<<< HEAD
-            JDBCHelper.run(queryString);
-            ResultSet set= JDBCHelper.pst.executeQuery();
-            while(set.next()){
-                String p=set.getString(1);
-=======
             jdbcHelper.run(queryString);
             ResultSet set = jdbcHelper.pst.executeQuery();
             while (set.next()) {
                 String p = set.getString(1);
->>>>>>> d3f931dad5a8d8677a79de83715ac4e1d5f4e911
                 if (p.equals(studentName)) {
                     return LoginResult.SUCCESS;
                 } else {
@@ -65,15 +45,9 @@ public class CommerceServiceImp implements CommerceService {
     }
 
     /**
-<<<<<<< HEAD
-     * ���Ժϵ���пγ�
-     *
-     * @return Ժϵ���еĿγ�
-=======
      * 获得院系所有课程
      *
      * @return 院系所有的课程
->>>>>>> d3f931dad5a8d8677a79de83715ac4e1d5f4e911
      */
     @Override
     public ArrayList<Course> getCourseList() {
@@ -98,11 +72,7 @@ public class CommerceServiceImp implements CommerceService {
     }
 
     /**
-<<<<<<< HEAD
-     * ���ѧ���ڱ�Ժ������ѡ�μ�¼
-=======
      * 获得学生在本院的所有选课记录
->>>>>>> d3f931dad5a8d8677a79de83715ac4e1d5f4e911
      *
      * @param studentID
      * @return
@@ -128,11 +98,7 @@ public class CommerceServiceImp implements CommerceService {
     }
 
     /**
-<<<<<<< HEAD
-     * ѡ�β�������ѡ���б���������Ŀ��������ʼֵΪ0
-=======
      * 选课操作，在选课列表中新增项目，分数初始值为0
->>>>>>> d3f931dad5a8d8677a79de83715ac4e1d5f4e911
      *
      * @param studentID
      * @param coureseID

@@ -1,7 +1,10 @@
 package createXml;
 
 import po.Course;
+import po.Selection;
+import po.Student;
 import sax.Dom4jDemo;
+import sax.Paser;
 
 import java.util.ArrayList;
 
@@ -11,7 +14,12 @@ import java.util.ArrayList;
 public class Test {
     public static  void main(String args[]){
         Dom4jDemo dom4jDemo=new Dom4jDemo();
-        ArrayList<Course> list=dom4jDemo.parserXml("source/xml/CommerceCourses.xml");
-        CreateCommerceXML.CoursesXML(list);
+        Paser paser=new Paser();/*
+        ArrayList<Student> list= paser.paserUnitedStudent("source/xml/UnitedStudent1.xml");
+        CreateUniteXML.StudentXML(list);*//*
+        ArrayList<Course> list= paser.paserMathCourse("source/xml/MathCourses.xml");
+        CreateMathXML.CoursesXML(list);*/
+        ArrayList<Selection> list= paser.paserUniteSelection("source/xml/UniteSelectionExam.xml");
+        CreateUniteXML.SelectionXML(list);
     }
 }

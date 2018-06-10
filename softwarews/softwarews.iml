@@ -20,6 +20,7 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="JAX-WS-Apache Axis" level="project" />
+<<<<<<< HEAD
     <orderEntry type="library" name="Java EE 6-Java EE 6" level="project" />
     <orderEntry type="module-library">
       <library name="JUnit4">
@@ -31,5 +32,8 @@
         <SOURCES />
       </library>
     </orderEntry>
+=======
+    <orderEntry type="library" name="dom4j-1.6.1" level="project" />
+>>>>>>> 353fa86d2d91a78580bf9c46542f9321e35d3670
   </component>
 </module>

@@ -14,7 +14,7 @@ public class test {
             paser.paserCommerceCourse("source/xml/CommerceCourses.xml");
             paser.paserSoftwareCourse("source/xml/SoftwareCourses.xml");
             paser.paserMathCourse("source/xml/MathCourses.xml");
-            paser.paserUnteSelection("source/xml/UniteSelectionExam.xml");
+            paser.paserUniteSelection("source/xml/UniteSelectionExam.xml");
             paser.paserSoftwareSelection("source/xml/SoftwareSelectionExam.xml");
             paser.paserCommerceSelection("source/xml/CommerceSelectionExam.xml");
             paser.paserMathSelection("source/xml/MathSelectionExam.xml");

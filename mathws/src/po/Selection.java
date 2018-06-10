@@ -5,19 +5,18 @@ public class Selection {
     public String studentId;
     public String courseId;
     public double grade;
-
     public Selection() {
     }
 
-    public Selection(String studentID, String coureseID) {
-        this.studentId = studentID;
-        this.courseId = coureseID;
+    public Selection(String studentId, String courseId) {
+        this.studentId = studentId;
+        this.courseId = courseId;
         this.grade=0;
     }
 
-    public Selection(String studentID, String coureseID, double grade) {
-        this.studentId = studentID;
-        this.courseId = coureseID;
+    public Selection(String studentId, String courseId, double grade) {
+        this.studentId = studentId;
+        this.courseId = courseId;
         this.grade = grade;
     }
 

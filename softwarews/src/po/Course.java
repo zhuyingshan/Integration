@@ -10,8 +10,8 @@ public class Course {
     public Course() {
     }
 
-    public Course(String courseID, String courseName, String teacher, char isShare) {
-        this.courseId = courseID;
+    public Course(String courseId, String courseName, String teacher, char isShare) {
+        this.courseId = courseId;
         this.courseName = courseName;
         this.teacher = teacher;
         this.isShare = isShare;
