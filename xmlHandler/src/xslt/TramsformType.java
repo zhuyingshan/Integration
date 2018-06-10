@@ -1,8 +1,5 @@
 package xslt;
 
-/**
- * Created by ÷Ï”¶…Ω on 2018/6/9.
- */
 public enum TramsformType {
     STUDENTTOUNITE,STUDENTTOS,STUDENTTOC,STUDENTTOM,
     COURSETOUNITE,COURSETOS,COURSETOC,COURSETOM,

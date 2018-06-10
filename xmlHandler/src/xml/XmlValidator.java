@@ -11,7 +11,6 @@ import org.dom4j.io.SAXReader;
 import org.dom4j.io.SAXValidator;
 import org.dom4j.io.XMLWriter;
 import org.dom4j.util.XMLErrorHandler;
-import org.junit.*;
 public class XmlValidator {
 	String XMLPath = "source/xml/SoftWareCourses.xml";
 	String XSDPath = "source/xsd/SoftWareCourses.xsd";
