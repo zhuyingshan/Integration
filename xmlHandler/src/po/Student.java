@@ -4,7 +4,8 @@ public class Student {
 
     public String name;
     public String studentId;
-
+    public String department;
+    public String sex;
     public Student() {
     }
 
