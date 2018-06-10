@@ -5,6 +5,7 @@ package sax;
  */
 public class test {
     public  static void main(String args[]){
-
+            Dom4jDemo dom4jDemo=new Dom4jDemo();
+            dom4jDemo.parserXml("source/xml/CommerceCourses.xml");
     }
 }

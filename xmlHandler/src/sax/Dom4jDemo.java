@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Writer;
+import java.util.ArrayList;
 import java.util.Iterator;
 
 import org.dom4j.Document;
@@ -12,6 +13,7 @@ import org.dom4j.DocumentHelper;
 import org.dom4j.Element;
 import org.dom4j.io.SAXReader;
 import org.dom4j.io.XMLWriter;
+import po.Course;
 
 /**
  * @author hongliang.dinghl
@@ -44,20 +46,24 @@ public class Dom4jDemo  {
     public void parserXml(String fileName) {
         File inputXml = new File(fileName);
         SAXReader saxReader = new SAXReader();
+        ArrayList<Course> list= new ArrayList<>();
         try {
             Document document = saxReader.read(inputXml);
-            Element employees = document.getRootElement();
-            for (Iterator i = employees.elementIterator(); i.hasNext(); ) {
-                Element employee = (Element) i.next();
-                for (Iterator j = employee.elementIterator(); j.hasNext(); ) {
-                    Element node = (Element) j.next();
-                    System.out.println(node.getName() + ":" + node.getText());
-                }
+            Element Courses = document.getRootElement();
+            for (Iterator i = Courses.elementIterator(); i.hasNext(); ) {
+                Element element = (Element) i.next();
+                String  couseID=element.element("cno").getText();
+                String courseName=element.elementText("cnm");
+                String teacher=element.elementText("tec");
+                String share=element.elementText("share");
+                System.out.println(couseID+" "+courseName+" "+teacher+" "+share+" ");
+                Course course=new Course(couseID,courseName,teacher,share.charAt(0));
+                list.add(course);
 
             }
         } catch (DocumentException e) {
             System.out.println(e.getMessage());
         }
-        System.out.println("dom4j parserXml");
+        System.out.println(list.size());
     }
 }
