@@ -11,6 +11,13 @@
     <title>$Title$</title>
   </head>
   <body>
-  $END$
+  <form action="servletService" method="post">
+    <label for="studentID">学号</label>
+    <input type="text" id="studentID" />
+    <label for="name">姓名</label>
+    <input type="text" id="name" />
+
+    <input type="submit" value="Login"/>
+  </form>
   </body>
 </html>

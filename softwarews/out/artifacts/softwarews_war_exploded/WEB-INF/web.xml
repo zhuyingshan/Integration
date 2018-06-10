@@ -49,4 +49,26 @@
         <extension>wsdl</extension>
         <mime-type>text/xml</mime-type>
     </mime-mapping>
+
+
+    <welcome-file-list>
+        <welcome-file>index.html</welcome-file>
+        <welcome-file>index.htm</welcome-file>
+        <welcome-file>index.jsp</welcome-file>
+        <welcome-file>default.html</welcome-file>
+        <welcome-file>default.htm</welcome-file>
+        <welcome-file>default.jsp</welcome-file>
+    </welcome-file-list>
+    <servlet>
+        <!-- 自己給servlet取得名字 -->
+        <servlet-name>servlet</servlet-name>
+        <!-- servlet的路徑  -->
+        <servlet-class>servlet.LoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <!-- 與上面的servlet-name對應 -->
+        <servlet-name>servlet</servlet-name>
+        <!-- 訪問servlet的地址，自己取 -->
+        <url-pattern>/hello1</url-pattern>
+    </servlet-mapping>
 </web-app>
