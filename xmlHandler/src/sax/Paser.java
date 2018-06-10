@@ -152,28 +152,28 @@ public class Paser {
         return list;
     }
 
-    public ArrayList<Course> paserCommerceCourse(String fileName) {
-        File inputXml = new File(fileName);
-        SAXReader saxReader = new SAXReader();
-        ArrayList<Course> list = new ArrayList<>();
-        try {
-            Document document = saxReader.read(inputXml);
-            Element Courses = document.getRootElement();
-            for (Iterator i = Courses.elementIterator(); i.hasNext(); ) {
-                Element element = (Element) i.next();
-                String courseID = element.elementText("cno");
-                String courseName = element.elementText("cnm");
-                String teacher = element.elementText("tec");
-                String share = element.elementText("share");
-                Course course = new Course(courseID, courseName, teacher, share.charAt(0));
-                list.add(course);
+        public ArrayList<Course> paserCommerceCourse(String fileName) {
+            File inputXml = new File(fileName);
+            SAXReader saxReader = new SAXReader();
+            ArrayList<Course> list = new ArrayList<>();
+            try {
+                Document document = saxReader.read(inputXml);
+                Element Courses = document.getRootElement();
+                for (Iterator i = Courses.elementIterator(); i.hasNext(); ) {
+                    Element element = (Element) i.next();
+                    String courseID = element.elementText("cno");
+                    String courseName = element.elementText("cnm");
+                    String teacher = element.elementText("tec");
+                    String share = element.elementText("share");
+                    Course course = new Course(courseID, courseName, teacher, share.charAt(0));
+                    list.add(course);
 
+                }
+            } catch (DocumentException e) {
+                System.out.println(e.getMessage());
             }
-        } catch (DocumentException e) {
-            System.out.println(e.getMessage());
+            return list;
         }
-        return list;
-    }
 
     public ArrayList<Course> paserMathCourse(String fileName) {
         File inputXml = new File(fileName);
